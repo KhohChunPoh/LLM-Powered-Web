@@ -1,9 +1,12 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
+from django.views.generic import RedirectView
 
 urlpatterns=[
-path("",views.home,name="home"),
-path("todos/",views.todos,name="Todos")
+
+path("login/",views.login,name="login"),
+path("chat/",views.chat,name="chat"),
+re_path(r"^.*$",RedirectView.as_view(url="/login/"))
 
 
     ]
