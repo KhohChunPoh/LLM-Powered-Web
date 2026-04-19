@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html>
 <head>
@@ -32,8 +34,8 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            word-wrap:break-word;
-            word-break:break-word;
+            word-wrap: break-word;
+            word-break: break-word;
         }
 
         {
@@ -45,22 +47,20 @@
             background-color: #e0e0e0;
         }
 
-        ::-webkit-scrollbar{
-            width:12px;
+        ::-webkit-scrollbar {
+            width: 12px;
         }
 
-        ::-webkit-scrollbar-track{
-            background:transparent;
+        ::-webkit-scrollbar-track {
+            background: transparent;
         }
 
-        ::-webkit-scrollbar-thumb{
-            background:#306030;
-            border-radius:10px;
-            border:2px solid;
-            border-color:#c0c0c0;
-
+        ::-webkit-scrollbar-thumb {
+            background: #306030;
+            border-radius: 10px;
+            border: 2px solid;
+            border-color: #c0c0c0;
         }
-
     </style>
 
 
@@ -72,6 +72,7 @@
 
     </title>
 
+    <link rel="icon" type="image/gif" href="{%static 'favicon.gif' %}">
 
 
 </head>
