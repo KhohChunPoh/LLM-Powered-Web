@@ -53,7 +53,7 @@ def chat(request):
 
             def generatereply(geminiprompt):
                 reply=""
-                for tokens in askgemini(geminiprompt):
+                for tokens in askgemini(user.name,geminiprompt):
                     if tokens.text:
                         reply+=tokens.text
                         yield tokens.text
