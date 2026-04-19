@@ -1,9 +1,9 @@
 from google import genai
 
 
-keyfile=open("key.txt",'r')
-apikey=keyfile.readline()
-keyfile.close()
+apikeyfile=open("apikey.txt",'r')
+apikey=apikeyfile.readline()
+apikeyfile.close()
 
 client = genai.Client(api_key=apikey)
 
