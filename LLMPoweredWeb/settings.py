@@ -21,9 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-secretkeyfile=open("secretkey.txt",'r')
-secretkey=secretkeyfile.readline()
-secretkeyfile.close()
 
 #SECRET_KEY = secretkey
 SECRET_KEY=os.environ.get("SECRET_KEY")
@@ -80,9 +77,6 @@ WSGI_APPLICATION = 'LLMPoweredWeb.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 
-passwordfile=open("pass.txt",'r')
-password=passwordfile.readline()
-passwordfile.close()
 
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))

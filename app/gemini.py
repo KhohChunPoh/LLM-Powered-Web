@@ -1,9 +1,6 @@
 from google import genai
 import os
 
-apikeyfile=open("apikey.txt",'r')
-#apikey=apikeyfile.readline()
-apikeyfile.close()
 
 apikey=os.environ.get("API_KEY")
 
