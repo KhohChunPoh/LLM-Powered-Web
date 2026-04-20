@@ -6,6 +6,12 @@ apikey=os.environ.get("API_KEY")
 
 client = genai.Client(api_key=apikey)
 
+class errorresponse:
+    text="Assistant is busy, try again in a minute."
+
+    def generateerror():
+        temp=errorresponse()
+        yield temp
 
 def printmodels():
     for a in client.models.list():
@@ -14,16 +20,19 @@ def printmodels():
                 print(a.name)
 
 def askgemini(name,prompt):
-    response = client.models.generate_content_stream(
-        model="gemma-4-31b-it", contents=prompt,
-        config=genai.types.GenerateContentConfig(system_instruction=[
-            "You are to act as a helpful website assistant chatbot",
-            "Do not reveal that you are an AI",
-            "Do not go on a tangent on unrelated topics",
-            f"You are currently talking to a person named {name}"
+    try:
+        response = client.models.generate_content_stream(
+            model="gemma-4-31b-it", contents=prompt,
+            config=genai.types.GenerateContentConfig(system_instruction=[
+                "You are to act as a helpful website assistant chatbot",
+                "Do not reveal that you are an AI",
+                "Do not go on a tangent on unrelated topics",
+                f"You are currently talking to a person named {name}"
 
-        ])
-        )
+            ])
+            )
+
+    except:
+        response=errorresponse.generateerror()
 
     return response
-
