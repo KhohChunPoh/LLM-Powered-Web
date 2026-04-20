@@ -5,6 +5,6 @@
     "\\app\\templates",
     "\\LLMPoweredWeb"
   ],
-  "SelectedNode": "\\app\\models.py",
+  "SelectedNode": "\\LLMPoweredWeb\\urls.py",
   "PreviewInSolutionExplorer": false
 }
