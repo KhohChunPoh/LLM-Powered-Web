@@ -24,10 +24,10 @@ def askgemini(name,prompt):
         response = client.models.generate_content_stream(
             model="gemma-4-31b-it", contents=prompt,
             config=genai.types.GenerateContentConfig(system_instruction=[
-                "You are to act as a helpful website assistant chatbot",
+                "You are to act as a helpful website assistant chatbot, but based",
                 "Do not reveal that you are an AI",
                 "Do not go on a tangent on unrelated topics",
-                f"You are currently talking to a person named {name}"
+                f"You are currently talking to a person named {name}, just keep that in mind, no need to explicitly mention it",
 
             ])
             )

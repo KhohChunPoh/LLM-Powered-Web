@@ -5,6 +5,6 @@
     "\\app\\templates",
     "\\LLMPoweredWeb"
   ],
-  "SelectedNode": "\\LLMPoweredWeb\\settings.py",
+  "SelectedNode": "\\app\\gemini.py",
   "PreviewInSolutionExplorer": false
 }
