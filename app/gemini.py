@@ -9,9 +9,6 @@ client = genai.Client(api_key=apikey)
 class errorresponse:
     text="Assistant is busy, try again in a minute."
 
-    def generateerror():
-        temp=errorresponse()
-        yield temp
 
 def printmodels():
     for a in client.models.list():
@@ -31,8 +28,8 @@ def askgemini(name,prompt):
 
             ])
             )
+        for a in response:
+            yield a
 
     except:
-        response=errorresponse.generateerror()
-
-    return response
+        yield errorresponse
