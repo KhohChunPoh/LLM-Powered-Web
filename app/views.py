@@ -10,7 +10,7 @@ def login(request):
     note=""
 
     if request.method=="POST":
-        print(request.POST)
+
         form=UserLogin(request.POST)
         if form.is_valid():
             CurrentUser=CustomUser(name=form.cleaned_data["name"],password=form.cleaned_data["password"])
@@ -30,6 +30,8 @@ def login(request):
     else:
         form=UserLogin()
     return render(request,"login.html",{"form":form,"note":note})
+
+
 
 def chat(request):
     user=CustomUser.objects.filter(id=request.session.get("user"))
