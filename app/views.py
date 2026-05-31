@@ -68,11 +68,8 @@ def chat(request):
             fullprompt=[{"role":log.role,"parts":[{"text":log.log}]} for log in previouslogs]
 
             
-            response= StreamingHttpResponse(generatereply(fullprompt),content_type="text/plain")
-            response["X-Accel-Buffering"]="no"
-            response["Cache-Control"]="no-cache"
+            return StreamingHttpResponse(generatereply(fullprompt),content_type="text/plain")
 
-            return response
 
 
 
