@@ -71,7 +71,9 @@ def chat(request):
             response = StreamingHttpResponse(generatereply(fullprompt), content_type="text/plain")
             response['X-Accel-Buffering'] = 'no'
             response['Cache-Control'] = 'no-cache'
+            response['X-Content-Type-Options'] = 'nosniff'
             return response
+
 
 
 
