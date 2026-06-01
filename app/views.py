@@ -58,7 +58,7 @@ def chat(request):
                 for tokens in askgemini(user.name,geminiprompt):
                     if tokens.text:
                         reply+=tokens.text
-                        yield tokens.text
+                        yield tokens.text.encode('utf-8')
 
                 user.chatlog_set.create(role="model",log=reply)
 
